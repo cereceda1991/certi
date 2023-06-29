@@ -43,7 +43,7 @@ return (
             <label>Por haber participado exitosamente como</label>
             <input
               type="text"
-              placeholder="UX/UI Designer"
+              placeholder="Backend Developer"
               name="career_type"
               className="content__carreer"
               value={inputs.career_type}

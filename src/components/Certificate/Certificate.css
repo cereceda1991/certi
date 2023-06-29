@@ -1,9 +1,10 @@
 .content {
-    width: 400px;
+    height: 400px;
     padding: 1rem;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
 
 .content_title {
     font-size: 1rem;
@@ -11,16 +12,16 @@
     background-color: red;
     border-radius: 5px;
     padding: .3rem;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 }
 
 .content__input-company {
-    font-size: 2.5rem;
+    margin-top: 1rem;
+    font-size: 1.8rem;
     margin-bottom: .5rem;
     text-align: center;
     border: none;
-    background-color: transparent;
-
+    font-weight: 800;
 }
 
 .content__label {
@@ -33,8 +34,8 @@
     text-align: center;
     border: none;
     background-color: transparent;
-    margin-top: 1rem;
-    text-transform: uppercase;
+    margin-top: .5rem;
+    font-weight: 600;
 }
 
 .director__presidente {
@@ -57,39 +58,52 @@
 }
 
 .content__carreer {
-    max-width: max-content;
-    text-align: center;
     border: none;
+    margin-right: .2rem;
+    width: 35%;
+    font-weight: 600;
     font-size: 1rem;
     font-family: inherit;
+    text-align: right;
+
 }
 
 .content__instance {
-    max-width: 20px;
+    max-width: 24px;
     text-align: center;
     border: none;
     font-size: 1rem;
+    background-color: transparent;
+    font-weight: 600;
+
 }
 
 .content__paragraph {
     display: inline-block;
     margin: 0;
     padding: 0;
+    text-indent: 3rem;
     font-family: inherit;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    word-wrap: break-word;
+    text-align: center;
 }
+
 
 .content__ceo {
     text-align: center;
-    text-decoration: underline;
+    background-color: transparent;
     border: none;
     font-family: inherit;
+    text-decoration: underline;
     font-size: 1rem;
 }
 
 .content__cto {
     text-align: center;
-    text-decoration: underline;
     border: none;
+    text-decoration: underline;
     font-size: 1rem;
 
 }
