@@ -14,9 +14,12 @@
     margin-bottom: 1rem;
 }
 
-.content__label-company {
+.content__input-company {
     font-size: 2.5rem;
     margin-bottom: .5rem;
+    text-align: center;
+    border: none;
+    background-color: transparent;
 
 }
 
@@ -29,7 +32,9 @@
     width: 100%;
     text-align: center;
     border: none;
+    background-color: transparent;
     margin-top: 1rem;
+    text-transform: uppercase;
 }
 
 .director__presidente {
@@ -52,9 +57,10 @@
 }
 
 .content__carreer {
-    max-width: 38%;
+    max-width: max-content;
     text-align: center;
     border: none;
+    font-size: 1rem;
     font-family: inherit;
 }
 
@@ -62,6 +68,7 @@
     max-width: 20px;
     text-align: center;
     border: none;
+    font-size: 1rem;
 }
 
 .content__paragraph {
@@ -76,10 +83,13 @@
     text-decoration: underline;
     border: none;
     font-family: inherit;
+    font-size: 1rem;
 }
 
 .content__cto {
     text-align: center;
     text-decoration: underline;
     border: none;
+    font-size: 1rem;
+
 }

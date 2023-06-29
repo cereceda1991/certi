@@ -18,9 +18,17 @@ const Certificate = () => {
 
 return (
     <section className="Certificate">
+
       <form className="content" id="content">
-        <label className="content_title">Certificado de Experiencia</label>
-        <label className="content__label-company">No Country</label>
+    <label className="content_title">Certificado de Experiencia</label>
+      <input
+          type="text"
+          placeholder="No Country"
+          name="company"
+          value={inputs.company}
+          onChange={handleChange}
+          className="content__input-company"
+        />
         <label className="content__label">Certifica a</label>
         <input
           type="text"
