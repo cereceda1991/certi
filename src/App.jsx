@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Model1 from "./assets/model1.jpeg";
 import Model2 from "./assets/model2.jpeg";
 import Model3 from "./assets/model3.jpeg";
+import Model4 from "./assets/model4.jpeg";
+import Model5 from "./assets/model5.jpeg";
+import Model6 from "./assets/model6.jpeg";
+import Model7 from "./assets/model7.jpeg";
+
 import Certificate from "./components/Certificate/Certificate";
 import "./App.css";
 
@@ -12,19 +17,32 @@ const models = [
   { id: 1, src: Model1 },
   { id: 2, src: Model2 },
   { id: 3, src: Model3 },
+  { id: 4, src: Model4 },
+  { id: 5, src: Model5 },
+  { id: 6, src: Model6 },
+  { id: 7, src: Model7 },
 ];
 
 function App() {
   const [imgFile, setImgFile] = useState(null);
-  const [imgPreview, setImgPreview] = useState(models[0].src);
+  const [imgPreview, setImgPreview] = useState(null);
 
-  if (imgFile) {
-    const reader = new FileReader();
-    reader.readAsDataURL(imgFile);
-    reader.onload = () => {
-      setImgPreview(reader.result);
-    };
-  }
+  useEffect(() => {
+    setImgPreview(models[0].src);
+  }, []);
+
+  const handleFileChange = (e) => {
+    const [file] = e.target.files;
+    setImgFile(file);
+
+    if (file) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        setImgPreview(reader.result);
+      };
+    }
+  };
 
   const exportToPDF = () => {
     const element = document.getElementById("container");
@@ -32,11 +50,9 @@ function App() {
     html2canvas(element, { scale: 3 }).then((canvas) => {
       const imgData = canvas.toDataURL("image/jpeg", 1.0);
 
-      // Establecer las dimensiones A4 horizontal
-      const pdfWidth = 297; // Ancho de A4 horizontal en mm
-      const pdfHeight = 210; // Altura de A4 horizontal en mm
+      const pdfWidth = 297;
+      const pdfHeight = 210;
 
-      // Crear el objeto jsPDF con orientación horizontal y tamaño A4
       const pdf = new jsPDF({
         orientation: "landscape",
         unit: "mm",
@@ -54,7 +70,6 @@ function App() {
     html2canvas(element, { scale: 3 }).then((canvas) => {
       const imgData = canvas.toDataURL("image/jpeg", 1.0);
 
-      // Descargar la imagen
       const link = document.createElement("a");
       link.href = imgData;
       link.download = "certificate.jpg";
@@ -69,10 +84,7 @@ function App() {
           type="file"
           className="file"
           accept="image/*"
-          onChange={(e) => {
-            const [files] = e.target.files;
-            setImgFile(files);
-          }}
+          onChange={handleFileChange}
         />
         <div className="options">
           {models.map((model) => (

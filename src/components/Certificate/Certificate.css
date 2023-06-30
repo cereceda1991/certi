@@ -3,8 +3,20 @@
     padding: 1rem;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
 }
-
 
 .content_title {
     font-size: 1rem;
@@ -22,6 +34,7 @@
     text-align: center;
     border: none;
     font-weight: 800;
+    background-color: transparent;
 }
 
 .content__label {
